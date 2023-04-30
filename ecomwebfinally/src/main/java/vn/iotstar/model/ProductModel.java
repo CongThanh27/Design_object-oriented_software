@@ -14,15 +14,15 @@ import vn.iotstar.entity.Product;
 @AllArgsConstructor
 public class ProductModel {
 	private Integer id;	
-    private String name="123";
-    private String desciption="123";
+    private String name;
+    private String desciption;
 	private String desciption1;
 	private String desciption2;
-    private Double price=123.0;
-    private Double promotionaprice=123.0;
-    private Integer quantity=123;
+    private Double price;
+    private Double promotionaprice;
+    private Integer quantity;
     private Integer sold;
-    private Boolean isselling = true;
+    private Boolean isselling;
     private String listimage;
     private MultipartFile listImageFile;
 	private String listimage1;

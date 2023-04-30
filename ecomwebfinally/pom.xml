@@ -17,8 +17,6 @@
 	</properties>
 	<dependencies>
 
-		
-
 
 		<dependency>
 			<groupId>javax.xml.bind</groupId>
@@ -91,6 +89,12 @@
 			<version>1.9.4</version>
 
 		</dependency>
+
+		<dependency>
+			<groupId>com.google.code.gson</groupId>
+			<artifactId>gson</artifactId>
+		</dependency>
+
 	</dependencies>
 
 	<build>

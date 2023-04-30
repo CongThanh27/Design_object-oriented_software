@@ -23,7 +23,7 @@
           <img src="${URL}dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
         </div> --%>
 				<div class="info">
-					<a href="/seller" class="d-block">Nhóm 9</a> 
+					<a href="/seller" class="d-block">Nhóm 9</a>
 
 				</div>
 			</div>
@@ -43,55 +43,37 @@
 
 			<!-- Sidebar Menu -->
 			<nav class="mt-2">
-        <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
-          <!-- Add icons to the links using the .nav-icon class
+				<ul class="nav nav-pills nav-sidebar flex-column"
+					data-widget="treeview" role="menu" data-accordion="false">
+					<!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
-          <li class="nav-item menu-open">
-            <a href="/seller" class="nav-link ">
-              <i class="nav-icon fas fa-tachometer-alt"></i>
-              <p>
-                Dashboard
-              </p>
-            </a>
-            
-          </li>
-          <li class="nav-item ">
-            <a href="/seller/order" class="nav-link">
-              <i class="nav-icon fas fa-tachometer-alt"></i>
-              <p>
-                Quản lý đơn hàng
-                
-              </p>
-            </a>
-            
-          </li>
-            <li class="nav-item menu-open">
-            <a href="/seller/product" class="nav-link active">
-              <i class="nav-icon fas fa-tachometer-alt"></i>
-              <p>
-                Quản lý sản phẩm
-                
-              </p>
-            </a>
-            <ul class="nav nav-treeview">
-              <li class="nav-item">
-                <a href="/seller/product" class="nav-link ">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Tất cả sản phẩm</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="/seller/addOrEdit" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Thêm sản phẩm</p>
-                </a>
-              </li>
-              
-                  
-            </ul>
-          </li>
-         </ul>
-      </nav>
+					<li class="nav-item menu-open"><a href="/seller"
+						class="nav-link "> <i class="nav-icon fas fa-tachometer-alt"></i>
+							<p>Dashboard</p>
+					</a></li>
+					<li class="nav-item "><a href="/seller/order" class="nav-link">
+							<i class="nav-icon fas fa-tachometer-alt"></i>
+							<p>Quản lý đơn hàng</p>
+					</a></li>
+					<li class="nav-item menu-open"><a href="/seller/product"
+						class="nav-link active"> <i
+							class="nav-icon fas fa-tachometer-alt"></i>
+							<p>Quản lý sản phẩm</p>
+					</a>
+						<ul class="nav nav-treeview">
+							<li class="nav-item"><a href="/seller/product"
+								class="nav-link "> <i class="far fa-circle nav-icon"></i>
+									<p>Tất cả sản phẩm</p>
+							</a></li>
+							<li class="nav-item"><a href="/seller/addOrEdit"
+								class="nav-link"> <i class="far fa-circle nav-icon"></i>
+									<p>Thêm sản phẩm</p>
+							</a></li>
+
+
+						</ul></li>
+				</ul>
+			</nav>
 			<!-- /.sidebar-menu -->
 		</div>
 		<!-- /.sidebar -->
@@ -130,49 +112,51 @@
 		<!-- Main content -->
 		<section class="content" style="top: -50px; left: -10px">
 			<div class="col mt-4">
-				<form action="saveOrUpdate" method="POST"
+				<form action="/seller/saveOrUpdate" method="post"
 					enctype="multipart/form-data">
 
 					<div class="card-body">
 
+						<input type="hidden" name="id" value="${product.id}">
 
 
 						<div class="input-group mb-3">
-							<label for="name" class="form-lablel"> Name: </label> <br> <input
-								type="text" value="${product.name}" name="name">
+							<label for="name" class="form-lablel"> Tên sản phẩm: </label> <br>
+							<input type="text" value="${product.name}" name="name">
 						</div>
 						<div class="input-group mb-3">
-							<label for="desciption" class="form-lablel"> Mô tả: </label> <br>
+							<label for="desciption" class="form-lablel"> Mô tả 1: </label> <br>
 							<input type="text" value="${product.desciption}"
 								name="desciption">
 						</div>
 						<div class="input-group mb-3">
-							<label for="desciption" class="form-lablel"> Mô tả 1: </label> <br>
+							<label for="desciption" class="form-lablel"> Mô tả 2: </label> <br>
 							<input type="text" value="${product.desciption1}"
 								name="desciption1">
 						</div>
 						<div class="input-group mb-3">
-							<label for="desciption" class="form-lablel"> Mô tả 2: </label> <br>
+							<label for="desciption" class="form-lablel"> Mô tả 3: </label> <br>
 							<input type="text" value="${product.desciption2}"
 								name="desciption2">
 						</div>
 						<div class="input-group mb-3">
-							<label for="trademark" class="form-lablel"> Thương hiệu: </label>
-							<br> <input type="text" value="${product.trademark}"
+							<label for="trademark" class="form-lablel"> Thương hiệu:
+							</label> <br> <input type="text" value="${product.trademark}"
 								name="trademark">
 						</div>
 						<div class="input-group mb-3">
-							<label for="price" class="form-lablel"> Price: </label> <br>
+							<label for="price" class="form-lablel"> Giá gốc: </label> <br>
 							<input type="text" value="${product.price}" name="price">
 						</div>
 						<div class="input-group mb-3">
-							<label for="promotionaprice" class="form-lablel">
-								Promotionaprice: </label> <br> <input type="text"
+							<label for="promotionaprice" class="form-lablel"> Giá
+								khuyến mãi: </label> <br> <input type="text"
 								value="${product.promotionaprice}" name="promotionaprice">
 						</div>
 						<div class="input-group mb-3">
-							<label for="quantity" class="form-lablel">Quantity: </label> <br>
-							<input type="text" value="${product.quantity}" name="quantity">
+							<label for="quantity" class="form-lablel">Số lượng hàng:
+							</label> <br> <input type="text" value="${product.quantity}"
+								name="quantity">
 						</div>
 
 						<div class="input-group mb-3">
@@ -191,55 +175,100 @@
 								type="file" name="listImageFile2" value="${product.listimage2}" />
 						</div>
 
-						<div class="input-group mb-3">
+						<%-- <div class="input-group mb-3">
 							<label for="categoryid" class="form-lablel">Categoryid: </label>
 							<br> <input type="number" value="${product.categoryid}"
-								name="categoryid"> 
-								
-								
+								name="categoryid"> --%>
 
+						<div class="input-group mb-3">
+							<label for="isselling">Trạng thái:</label> <select id="isselling"
+								name="isselling">
+
+								<option value="">--Chọn trạng thái--</option>
+								<c:if test="${product.isselling != null }">
+									<c:if test="${product.isselling == true }">
+										<option value="true" selected>Đang bán</option>
+										<option value="false">Ngưng bán</option>
+									</c:if>
+									<c:if test="${product.isselling == false }">
+										<option value="true">Đang bán</option>
+										<option value="false" selected>Ngưng bán</option>
+									</c:if>
+								</c:if>
+								<c:if test="${product.isselling == null }">
+									<option value="true">Đang bán</option>
+									<option value="false">Ngưng bán</option>
+								</c:if>
+
+							</select>
+						</div>
+
+						<div class="input-group mb-3">
+
+							<label for="categoryid">Loại sản phẩm:</label> <select
+								id="categoryid" name="categoryid">
+
+								<option value="">--Chọn loại sản phẩm--</option>
+								<c:forEach items="${categoryList }" var="category">
+									<c:if test="${product.categoryid == category.id }">
+										<option value="${category.id }" selected>${category.name }</option>
+									</c:if>
+									<c:if test="${product.categoryid != category.id }">
+										<option value="${category.id }">${category.name }</option>
+									</c:if>
+								</c:forEach>
+
+							</select>
 
 						</div>
-						<%-- <div class="input-group mb-3">
+
+
+
+
+					</div>
+					<%-- <div class="input-group mb-3">
 							<label for="storeid" class="form-lablel"> Storeid:</label> <br>
 							<input type="hidden" value="${product.storeid}" name="storeid">
 						</div> --%>
-						<input type="hidden" value="${product.storeid}" name="storeid">
+					<input type="hidden" value="${product.storeid}" name="storeid">
 
-						
 
-						<%-- <div class="input-group mb-3">
+
+					<%-- <div class="input-group mb-3">
 							<label for="rating" class="form-lablel"> Rating:</label> <br>
 							<input type="text" value="${product.rating}" name="rating">
 							</div> --%>
-							
-							<input type="hidden" value="${product.rating}" name="rating">
+
+					<input type="hidden" value="${product.rating}" name="rating">
 
 
-							<div class="card-footer text-muted">
-								<a href="/seller/addOrEdit" class="btn btn-secondary"><i
-									class="fas fa-new"></i>New</a> <a href="/seller/product"
-									class="btn btn-success"><i class="fas bars"></i>Quay lại</a>
-								<button class="btn btn-primary" type="submit">
-									<i class="fas fa-save"></i>
-									<!-- true là cập nhật -->
-									<c:if test="${product.isEdit }">
-										<span>Update</span>
-									</c:if>
+					<div class="card-footer text-muted">
+						<a href="/seller/addOrEdit" class="btn btn-secondary"><i
+							class="fas fa-new"></i>New</a> <a href="/seller/product"
+							class="btn btn-success"><i class="fas bars"></i>Quay lại</a>
+						<button class="btn btn-primary" type="submit">
+							<i class="fas fa-save"></i>
+							<!-- true là cập nhật -->
+							<c:if test="${product.isEdit }">
+								<span>Update</span>
+							</c:if>
 
-									<c:if test="${!product.isEdit }">
-										<span>Save</span>
-									</c:if>
+							<c:if test="${!product.isEdit }">
+								<span>Save</span>
+							</c:if>
 
-								</button>
-							</div>
-				</form>
-
+						</button>
+						<!-- <a href="/seller/product" class="btn btn-danger"><i
+							class="fas bars"></i>Xoá sản phẩm</a> -->
+						
+					</div>
 			</div>
+			</form>
+	</div>
 
 
 
-		</section>
-		<!-- /.content -->
+	</section>
+	<!-- /.content -->
 	</div>
 </c:if>

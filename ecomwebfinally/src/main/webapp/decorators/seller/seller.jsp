@@ -27,6 +27,7 @@
 <!-- Tempusdominus Bootstrap 4 -->
 
 <!-- Category  -->
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.min.js"></script>
 
 
 
@@ -39,7 +40,7 @@
 
 
 
-	<%@ include file="/common/admin/header.jsp"%>
+	<%-- <%@ include file="/common/admin/header.jsp"%> --%>
 	<!-- body -->
 	<sitemesh:write property='body'></sitemesh:write>
 	<!-- body -->
@@ -47,14 +48,14 @@
 	<!--=== Footer v4 ===-->
 
 
-	<jsp:include page="/common/admin/footer.jsp"></jsp:include>
+	<%-- <jsp:include page="/common/admin/footer.jsp"></jsp:include> --%>
 	<!--=== End Footer v4 ===-->
 
 	<!-- ./wrapper -->
 
 	<!-- REQUIRED SCRIPTS -->
 	<!-- jQuery -->
-	<script src="${URL}plugins/jquery/jquery.min.js"></script>
+	<%-- <script src="${URL}plugins/jquery/jquery.min.js"></script> --%>
 	<!-- Bootstrap -->
 	<script src="${URL}plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
 	<!-- overlayScrollbars -->
@@ -74,6 +75,7 @@
 	<script src="${URL}dist/js/demo.js"></script>
 	<!-- AdminLTE dashboard demo (This is only for demo purposes) -->
 	<script src="${URL}dist/js/pages/dashboard2.js"></script>
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
 
 
