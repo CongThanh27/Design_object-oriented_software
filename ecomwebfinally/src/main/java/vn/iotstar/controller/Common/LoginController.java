@@ -2,6 +2,7 @@ package vn.iotstar.controller.Common;
 
 import java.lang.reflect.InvocationTargetException;
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import java.util.Optional;
@@ -80,10 +81,22 @@ public class LoginController {
 			model.addAttribute("category", cate);
 
 			List<Product> list = productService.findTop10ByOrderByCreateatDesc();
-			model.addAttribute("product", list);
+			List<Product> productList = new ArrayList<>();
+			for (Product p: list) {
+				if (p.getIsselling() == true) {
+					productList.add(p);
+				}
+			}
+			model.addAttribute("product", productList);
 
 			List<Product> listBest = productService.findTop13ByOrderBySoldDesc();
-			model.addAttribute("productb", listBest);
+			List<Product> productBestList = new ArrayList<>();
+			for (Product p: listBest) {
+				if (p.getIsselling() == true) {
+					productBestList.add(p);
+				}
+			}
+			model.addAttribute("productb", productBestList);
 
 			long soSanPhamTrongGio = 0;
 			if (user != null) {
@@ -165,10 +178,22 @@ public class LoginController {
 		model.addAttribute("category", cate);
 
 		List<Product> list = productService.findTop10ByOrderByCreateatDesc();
-		model.addAttribute("product", list);
+		List<Product> productList = new ArrayList<>();
+		for (Product p: list) {
+			if (p.getIsselling() == true) {
+				productList.add(p);
+			}
+		}
+		model.addAttribute("product", productList);
 
 		List<Product> listBest = productService.findTop13ByOrderBySoldDesc();
-		model.addAttribute("productb", listBest);
+		List<Product> productBestList = new ArrayList<>();
+		for (Product p: listBest) {
+			if (p.getIsselling() == true) {
+				productBestList.add(p);
+			}
+		}
+		model.addAttribute("productb", productBestList);
 
 		long soSanPhamTrongGio = 0;
 		if (user != null) {

@@ -443,11 +443,17 @@ public class ProductController {
 	public ModelAndView searchidcate(ModelMap model, @PathVariable("id") int id) throws IOException {
 		Optional<Category> opt = categoryService.findById(id);
 		List<Product> list = null;
+		List<Product> productList = new ArrayList<>();
 		if (opt.isPresent()) {
 			Category entity = opt.get();
 			System.out.print(entity.getName());
 			list = entity.getProducts();
-			model.addAttribute("product", list);
+			for (Product product : list) {
+				if (product.getIsselling() == true) {
+					productList.add(product);
+				}
+			}
+			model.addAttribute("product", productList);
 			List<Category> cate = categoryService.findAll();
 			model.addAttribute("category", cate);
 			return new ModelAndView("user/product/list", model);

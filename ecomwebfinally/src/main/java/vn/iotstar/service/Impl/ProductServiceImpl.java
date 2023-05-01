@@ -209,4 +209,11 @@ public class ProductServiceImpl implements IProductService{
 		// TODO Auto-generated method stub
 		return productRepository.findTop10ByOrderBySoldAsc();
 	}
+
+
+
+	@Override
+	public List<Product> findByIsselling(Boolean b) {
+		return productRepository.findByIsselling(b);
+	}
 }
