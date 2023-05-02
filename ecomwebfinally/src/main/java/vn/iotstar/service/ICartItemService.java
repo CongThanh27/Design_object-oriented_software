@@ -10,6 +10,7 @@ import org.springframework.data.domain.Sort;
 
 import vn.iotstar.entity.Cart;
 import vn.iotstar.entity.CartItem;
+import vn.iotstar.entity.Product;
 import vn.iotstar.entity.User;
 
 public interface ICartItemService {
@@ -37,6 +38,7 @@ public interface ICartItemService {
 	Page<CartItem> findAll(Pageable pageable);
 
 	List<CartItem> findAll();
+	CartItem findByCartAndProduct(Cart cart, Product product);
 
 	<S extends CartItem> Optional<S> findOne(Example<S> example);
 

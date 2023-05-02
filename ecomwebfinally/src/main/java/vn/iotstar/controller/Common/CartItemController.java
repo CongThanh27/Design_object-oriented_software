@@ -21,7 +21,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import vn.iotstar.entity.Cart;
@@ -400,7 +400,16 @@ public class CartItemController {
 		return new ModelAndView("redirect:/user/cart/item", model);
 
 	}
+	@PostMapping("update-quantity/{id}")
+	public ModelAndView updateQuantity(ModelMap model,@PathVariable("id") Integer id, @RequestParam("count") int count, HttpSession session) {
+		Optional<CartItem> item = cartItemService.findById(id);
+		CartItem entity = item.get();
+		entity.setCount(count);
+		cartItemService.save(entity);
+		model.addAttribute("message", "Delete Succesfull !!!");
+		return new ModelAndView("redirect:/user/cart/List", model);
 
+	}
 	@GetMapping("delete/{id}")
 	public ModelAndView delete(ModelMap model, @PathVariable("id") int id) {
 		cartItemService.deleteById(id);
