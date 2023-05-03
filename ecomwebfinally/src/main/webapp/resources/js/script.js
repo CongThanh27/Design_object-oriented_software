@@ -33,3 +33,23 @@ $("#show-sidebar").click(function() {
    
    
 });
+
+
+$(document).ready(function() {
+  $('.buy-btn').click(function() {
+    var productId = $(this).data('id');
+    $('#product-id').val(productId);
+    $('#confirm-modal').modal('show');
+  });
+});
+
+$(document).ready(function() {
+  $('#confirm-btn').click(function() {
+    var productId = $('#product-id').val();
+    // Thực hiện các hành động mua hàng với productId ở đây
+     window.location.href = "/user/cart/process/"+productId;
+    // Sau khi mua hàng thành công, ẩn modal
+    $('#confirm-modal').modal('hide');
+  });
+});
+

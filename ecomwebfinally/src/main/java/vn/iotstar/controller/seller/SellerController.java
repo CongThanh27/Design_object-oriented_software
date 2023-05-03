@@ -10,7 +10,6 @@ import javax.servlet.ServletContext;
 import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
 
-import org.junit.experimental.categories.Categories;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -29,7 +28,6 @@ import vn.iotstar.entity.Product;
 import vn.iotstar.entity.Store;
 import vn.iotstar.entity.User;
 import vn.iotstar.model.ProductModel;
-import vn.iotstar.model.UserModel;
 import vn.iotstar.service.ICategoryService;
 import vn.iotstar.service.IDeliveryService;
 import vn.iotstar.service.IOrderService;

@@ -22,6 +22,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import vn.iotstar.entity.Cart;
 import vn.iotstar.entity.CartItem;
@@ -64,13 +65,13 @@ public class LoginController {
 
 	@RequestMapping("/login")
 	public String showLogin() {
-		session.removeAttribute("message");
 		return "/login";
 	}
 
 	@PostMapping("/")
 	public String home(ModelMap model, @RequestParam("email") String email,
-			@RequestParam("hashedpassword") String hashedpassword, HttpSession session) {
+			@RequestParam("hashedpassword") String hashedpassword, HttpSession session,RedirectAttributes ra) {
+		session.removeAttribute("message");
 		if (userService.checkLogin(email, hashedpassword)) {
 			User user = userService.findByEmail(email);
 			session.setAttribute("user", user);
@@ -95,12 +96,14 @@ public class LoginController {
 
 			model.addAttribute("count", soSanPhamTrongGio);
 			if (user.getRole() == true) {
+				session.removeAttribute("message");
 				return "redirect:/admin/ThongKe/1";
+				
 			}
 			return "index";
 			} else {
+				session.setAttribute("message", "Email or Password not exist");
 			System.out.println("Login that bai");
-			model.addAttribute("message", "Email or Password not exist");
 		}
 		return "redirect:/login";
 	}
