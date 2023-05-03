@@ -14,6 +14,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import vn.iotstar.entity.Cart;
 import vn.iotstar.entity.CartItem;
+import vn.iotstar.entity.Product;
 import vn.iotstar.entity.User;
 import vn.iotstar.Repository.CartItemRepository;
 import vn.iotstar.service.ICartItemService;
@@ -62,6 +63,10 @@ public class CartItemServiceImpl implements ICartItemService {
 	@Override
 	public Optional<CartItem> findById(Integer id) {
 		return CartItemRepository.findById(id);
+	}
+	@Override
+	public CartItem findByCartAndProduct(Cart cart, Product product) {
+		return CartItemRepository.findByCartAndProduct(cart, product);
 	}
 
 	@Override
