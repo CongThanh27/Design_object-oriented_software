@@ -1,7 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ include file="/common/taglib.jsp"%>
-
 <div class="container product_section_container">
 	<div class="row">
 		<div class="col product_section clearfix">
@@ -352,7 +351,6 @@
 		</div>
 	</div>
 </div>
-
 
 
 
