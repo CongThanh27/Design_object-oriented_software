@@ -5,6 +5,7 @@
 
 <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist"
 	aria-orientation="vertical" style="margin: auto; margin-top: 150px">
+	<p class="login-box-msg">${message}</p>
 	<a class="nav-link active" id="v-pills-home-tab" data-toggle="pill"
 		href="#v-pills-home" role="tab" aria-controls="v-pills-home"
 		aria-selected="true">Overview</a> <a class="nav-link"

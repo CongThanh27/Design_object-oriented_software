@@ -43,7 +43,15 @@
   <link rel="stylesheet" href="${URL1}plugins/daterangepicker/daterangepicker.css">
   <!-- summernote -->
   <link rel="stylesheet" href="${URL1}plugins/summernote/summernote-bs4.min.css">
+<link rel="stylesheet" type="text/css" href="/resources/css/styles.css">
+<!-- Link CSS của Bootstrap -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
 
+<!-- Link thư viện jQuery -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<!-- Link script của Bootstrap -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
    
 
 </head>
