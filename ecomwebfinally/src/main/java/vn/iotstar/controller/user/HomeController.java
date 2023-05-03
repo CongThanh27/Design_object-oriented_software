@@ -58,7 +58,17 @@ public class HomeController {
 	@GetMapping("/profile/{id}")
 	public String showProfile(ModelMap model, @PathVariable("id")Integer id) {
 		Optional<User> user = userService.findById(id);
-		
+		String message = null;
+		message = (String) session.getAttribute("message");
+		if (message!= null) {
+			if(message =="Cập nhật tài khoản thành công") {
+				session.setAttribute("message", "Đã cập nhật tài khoản thành công");
+			}
+			else {
+				session.removeAttribute("message");
+			}
+			
+		}	
 		UserModel userModel = new UserModel();
 		BeanUtils.copyProperties(user.get(), userModel);
 		model.addAttribute("user", userModel);
@@ -137,6 +147,7 @@ public class HomeController {
 				entity.setUpdateat(date);
 				userService.save(entity);
 				System.out.println("Update complete");
+				session.setAttribute("message", "Cập nhật tài khoản thành công");
 				return new ModelAndView("redirect:/user/profile/" + user.getId(), model);
 			}else {
 				System.out.print("New pass does match with Retype new pass");

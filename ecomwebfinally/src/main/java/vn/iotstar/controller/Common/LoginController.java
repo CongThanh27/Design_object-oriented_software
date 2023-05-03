@@ -203,7 +203,7 @@ public class LoginController {
 			user.setUpdateat(date);
 			User updateUser = userService.save(user);
 			if (updateUser != null) {
-				session.setAttribute("msg", "Đổi mật khẩu thành công");
+				session.setAttribute("message", "Đổi mật khẩu thành công");
 				return "redirect:/login";
 			}
 		}
