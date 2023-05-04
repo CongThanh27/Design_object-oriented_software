@@ -254,7 +254,7 @@ public class CartItemController {
 	  }
 	  	  
 	String message="";
-	message ="Đặt hàng thành công";
+	message ="Thành công";
 	model.addAttribute("message", message); 
 	String a ="redirect:/user/cart/Order";
 	return new ModelAndView(a, model);

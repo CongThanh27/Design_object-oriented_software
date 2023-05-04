@@ -1,7 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ include file="/common/taglib.jsp"%>
-<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 <div class="container product_section_container">
 	<!-- Main content -->
 	<section class="content">
@@ -240,13 +239,5 @@
 		</div>
 	</div>
 </div>
-<c:if test="${param.message != null}">
-<script>
-
-	window.onload = function() {
-		swal("Đặt hàng thành công!", "Mời bạn xem đơn đặt hàng của mình!", "success");
-	  };
-</script>
-</c:if>
 
 

@@ -3340,18 +3340,6 @@ Version:1.0
 .shop.checkout .single-widget .checkbox label input{
 	display:none;
 }
-.shop.checkout .single-widget .checkbox label:has(:checked)::before{
-	position: absolute;
-	content: "";
-	left: 0;
-	top: 7px;
-	width: 12px;
-	height: 12px;
-	line-height: 16px;
-	border: 1px solid #666;
-	border-radius: 100%;
-	background:brown
-}
 .shop.checkout .single-widget .checkbox label::before {
 	position: absolute;
 	content: "";

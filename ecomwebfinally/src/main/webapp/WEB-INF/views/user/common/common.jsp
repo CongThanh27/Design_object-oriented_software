@@ -82,7 +82,7 @@
 								<div class="col-lg-6 col-md-6 col-12">
 									<div class="form-group">
 										<label>Nhập mã giảm giá<span></span></label> <input
-											type="text" name="post" placeholder="">
+											type="text" name="post" placeholder="" required="required">
 									</div>
 								</div>
 								<div class="col-lg-6 col-md-6 col-12">
@@ -142,9 +142,9 @@
 								<div class="content">
 									<div class="checkbox">
 										<label><input name="updates" id="1" type="checkbox"
-											checked="checked" required="required">Thanh toán khi nhận hàng</label> <label><input
-											name="news" id="2" type="checkbox" disabled> Thẻ tín dụng</label> <label><input
-											name="news" id="3" type="checkbox" disabled> Ví T2K</label>
+											checked="checked">Thanh toán khi nhận hàng</label> <label><input
+											name="news" id="2" type="checkbox"> Thẻ tín dụng</label> <label><input
+											name="news" id="3" type="checkbox"> Ví T2K</label>
 									</div>
 								</div>
 							</div>

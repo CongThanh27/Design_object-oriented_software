@@ -4,7 +4,7 @@
 <c:url value="/images/${product.listimage}" var="imgUrl"></c:url>
 <c:url value="/images/${product.listimage1}" var="imgUrl1"></c:url>
 <c:url value="/images/${product.listimage2}" var="imgUrl2"></c:url>
-<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
 <div class="container single_product_container">
 	<div class="row">
 		<div class="col">
@@ -409,12 +409,3 @@
 		</div>
 	</div>
 </div>
-<c:if test="${param.message != null}">
-<script>
-
-	window.onload = function() {
-		swal("Đã thêm vào giỏ hàng!", "Mời bạn xem giỏ hàng của mình hoặc tiếp tục mua sắm!", "success");
-	  };
-</script>
-</c:if>
-
