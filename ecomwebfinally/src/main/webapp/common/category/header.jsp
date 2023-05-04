@@ -106,8 +106,13 @@
 								<li><a href="/">contact</a></li>
 							</ul>
 							<ul class="navbar_user">
-								<li><a href="#"><i class="fa fa-search"
-										aria-hidden="true"></i></a></li>
+								<li>
+									<form class="form-inline my-2 my-lg-0" method="post" action="/product/search">
+								        <input class="form-control mr-sm-2" type="search" name="name" placeholder="  Tìm kiếm sản phẩm" aria-label="Search" style="border-radius: 30px">
+								        <button type="submit" style="border: none; background: transparent;"><i class="fa fa-search"
+											aria-hidden="true"></i></button>
+	      							</form>
+								</li>
 								<li><a href="#"><i class="fa fa-user"
 										aria-hidden="true"></i></a></li>
 								<!--Cate -->
