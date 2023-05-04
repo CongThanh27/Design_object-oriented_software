@@ -44,12 +44,15 @@ import vn.iotstar.service.IProductService;
 import vn.iotstar.service.IReviewService;
 import vn.iotstar.service.IStoreService;
 import vn.iotstar.service.IUserService;
+import vn.iotstar.service.Impl.CartItemServiceImpl;
 
 @Controller
 @RequestMapping("/product")
 public class ProductController {
 	@Autowired
 	IProductService productService;
+	@Autowired
+	ICartItemService cartItemService;
 	@Autowired
 	ServletContext application;
 	@Autowired
@@ -149,14 +152,23 @@ public class ProductController {
 			@Valid @ModelAttribute("cartit") CartItemModel cartit, BindingResult result) {
 
 		Cart cartid = CreateCart(cart.getStoreid());
+		Product productid = productService.getById(cartit.getProductid());
 		CartItem entity = new CartItem();
 		BeanUtils.copyProperties(cartit, entity);
-		entity.setProduct(productService.getById(cartit.getProductid()));
-		entity.setCart(cartid);
-		Date getDate = new Date();
-		entity.setCreateat(getDate);
-		entity.setUpdateat(getDate);
-		iCartItemService.save(entity);
+		CartItem item = cartItemService.findByCartAndProduct(cartid, productid);
+		if(item != null) {
+			item.setCount(item.getCount()+1);
+			iCartItemService.save(item);
+		}
+		else {
+			entity.setProduct(productService.getById(cartit.getProductid()));
+			entity.setCart(cartid);
+			Date getDate = new Date();
+			entity.setCreateat(getDate);
+			entity.setUpdateat(getDate);
+			iCartItemService.save(entity);
+		}
+		
 		String message = "";
 		message = "Đã thêm vào giỏ hàng";
 		model.addAttribute("message", message);

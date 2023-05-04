@@ -19,7 +19,7 @@ public class UploadUtils {
 			return "";
 		}
 		if (storeFolder == null)
-			storeFolder = "F:\\CNTT\\N3\\Ky1\\LapTrinhWeb\\ecomwebfinally\\src\\main\\webapp\\resources\\images";
+			storeFolder = "D:\\Download\\Spring\\ECOMWEB_myPham\\ecomwebfinally\\src\\main\\webapp\\resources\\images";
 
 		if (storeFilename == null)
 			storeFilename = Paths.get(filePart.getSubmittedFileName()).getFileName().toString();

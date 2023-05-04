@@ -57,7 +57,15 @@
 	<link rel="stylesheet" href="${URL1}css/reset.css">
 	<link rel="stylesheet" href="${URL1}style.css">
     <link rel="stylesheet" href="${URL1}css/responsive.css">
-    
+  <link rel="stylesheet" type="text/css" href="/resources/css/styles.css">
+<!-- Link CSS của Bootstrap -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+
+<!-- Link thư viện jQuery -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<!-- Link script của Bootstrap -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
     
 
 </head>
@@ -124,7 +132,5 @@
     <script src="${URL}plugins/jquery-ui-1.12.1.custom/jquery-ui.js"></script>
     <script src="${URL}js/categories_custom.js"></script>
     <script src="${URL}js/single_custom.js "></script>
-    
-    
 </body>
 </html>

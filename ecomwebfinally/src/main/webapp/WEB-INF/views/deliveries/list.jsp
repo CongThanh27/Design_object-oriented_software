@@ -1,10 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ include file="/common/taglib.jsp"%>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 <div class="container product_section_container">
 	<!-- Main content -->
 	<section class="content">
 		<div class="container-fluid">
+			<p class="login-box-msg">${message}</p>
 			<h5 class="mb-2">Trạng thái</h5>
 			<div class="row">
 				<div class="col-12 col-sm-6 col-md-3">
@@ -81,18 +83,20 @@
 		<!-- /.card-header -->
 		<div class="card-body">
 			<c:forEach items="${order}" var="order">
+
 				<br>
 				<br>
 				<span class="info-box-number">${order.createat}</span>
-
+				<a href="/user/cart/Detail/${order.id}" style="float: right;"info-box-number">Xem
+					chi tiết đơn hàng</a>
 				<table class="table table-bordered">
 					<thead>
 						<tr>
 							<th style="width: 10px">IMG</th>
-							<th>Tên sản phẩm</th>
-							<th>Tên cửa hàng</th>
+							<th>Tên người nhận</th>
+							<th>Điện thoại đặt hàng</th>
 							<th>Tiến trình giao hàng</th>
-							<th style="width: 40px">Giá</th>
+							<th>Địa chỉ</th>
 
 						</tr>
 					</thead>
@@ -103,16 +107,9 @@
 										value="/images/${orderitem.product.listimage}" var="imgUrl"></c:url>
 									<img width="100px" height="100px" src="${imgUrl}" alt="">
 								</td>
-								<td width="320px"><a
-									href="/product/user/list/${orderitem.product.id}">${orderitem.product.name}</a>
-									<br><br><br>
-									<c:if test="${ order.giaohang == 4}">
-										<a href="/user/cart/reviewAndRating/${orderitem.product.id }"><span
-											class="badge bg-success">Đánh giá sản phẩm</span></a>
-									</c:if></td>
-									<td >
-									<a href="#">${orderitem.product.store.name }</a>
-									</td>
+								<td><a href="#">${order.user.firstName}
+										${order.user.lastName}</a></td>
+								<td>${order.phone}</td>
 								<td width="233px"><c:if test="${order.giaohang==0}">
 										<div class="progress progress-xs">
 											<div class="progress-bar bg-danger" style="width: 20%"></div>
@@ -134,7 +131,7 @@
 											<div class="progress-bar bg-success" style="width: 100%"></div>
 										</div>
 									</c:if></td>
-								<td width="44px"><span class="badge bg-info">$${orderitem.count*orderitem.product.promotionaprice}</span>
+								<td width="44px"><span class="badge bg-info">${order.address}</span>
 								</td>
 
 							</tr>
@@ -146,21 +143,23 @@
 				</table>
 				<span class="badge bg-danger"> Tổng:$${order.price}</span>
 				<c:if test="${ order.giaohang == 1}">
-					<a href="/user/cart/process/${order.id }"><span
-						class="badge bg-danger">Hủy đơn</span></a>
+
+					<button type="button" class="btn btn-primary buy-btn"
+						data-id="${order.id}">Hủy đơn</button>
+
 				</c:if>
 				<c:if test="${ order.giaohang == 3}">
-					<a href="/user/cart/process/${order.id }"><span
+					<a href="/user/cart/process/${order.id}"><span
 						class="badge bg-success">Đã nhận</span></a>
 				</c:if>
-
-
 			</c:forEach>
 		</div>
 		<!-- /.card-body -->
 
 	</div>
 </div>
+
+
 <!-- Benefit -->
 
 <div class="benefit">
@@ -239,5 +238,34 @@
 		</div>
 	</div>
 </div>
+<div class="modal fade" id="confirm-modal" tabindex="-1" role="dialog">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title">Xác nhận mua hàng</h5>
+				<button type="button" class="close" data-dismiss="modal"
+					aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+			</div>
+			<div class="modal-body">
+				<p>Bạn có chắc chắn muốn mua sản phẩm này không?</p>
+				<input type="hidden" id="product-id" name="product-id" value="">
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-secondary" data-dismiss="modal">Hủy</button>
+				<button type="button" class="btn btn-primary" id="confirm-btn">Đồng
+					ý</button>
+			</div>
+		</div>
+	</div>
+</div>
+<c:if test="${param.message != null}">
+<script>
 
+	window.onload = function() {
+		swal("Đặt hàng thành công!", "Mời bạn xem đơn đặt hàng của mình!", "success");
+	  };
+</script>
+</c:if>
 

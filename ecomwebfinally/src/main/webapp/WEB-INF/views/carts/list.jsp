@@ -17,48 +17,56 @@
 								<th class="text-center">QUANTITY</th>
 								<th class="text-center">TOTAL</th>
 								<th class="text-center"><i class="ti-trash remove-icon"></i></th>
+								<th class="text-center"><i class="ti-reload remove-icon"></i></th>
 							</tr>
 						</thead>
 						<tbody>
 							<c:forEach items="${cartitem}" var="cartitem">
-								<tr>
-									<c:url value="/images/${cartitem.product.listimage}"
-										var="imgUrl"></c:url>
-									<td class="image" data-title="No"><img width="100px"
-										height="100px" src="${imgUrl}" alt="#"></td>
-									<td class="product-des" data-title="Description">
-										<p class="product-name">
-											<a href="#">${cartitem.product.name}</a>
-										</p>
-										<p class="product-des">${cartitem.product.name}</p>
-									</td>
-									<td class="price" data-title="Price"><span>$${cartitem.product.promotionaprice}
-									</span></td>
-									<td class="qty" data-title="Qty">
-										<!-- Input Order -->
-										<div class="input-group">
-											<div class="button minus">
-												<button type="button" class="btn btn-primary btn-number"
-													disabled="disabled" data-type="minus" data-field="quant[1]">
-													<i class="ti-minus"></i>
-												</button>
-											</div>
-											<input type="text" name="count" class="input-number"
-												data-min="1" data-max="100" value="${cartitem.count}">
-
-											<div class="button plus">
-												<button type="button" class="btn btn-primary btn-number"
-													data-type="plus" data-field="quant[1]">
-													<i class="ti-plus"></i>
-												</button>
-											</div>
-										</div> <!--/ End Input Order -->
-									</td>
-									<td class="total-amount" data-title="Total"><span>${cartitem.product.promotionaprice*cartitem.count}</span></td>
-									<td class="action" data-title="Remove"><a
-										href="/user/cart/delete/${cartitem.id}"><i
-											class="ti-trash remove-icon"></i></a></td>
-								</tr>
+									<tr>
+									<form method="post" action="/user/cart/update-quantity/${cartitem.id}">
+										<c:url value="/images/${cartitem.product.listimage}"
+													var="imgUrl"></c:url>
+												<td class="image" data-title="No"><img width="100px"
+													height="100px" src="${imgUrl}" alt="#"></td>
+												<td class="product-des" data-title="Description">
+													<p class="product-name">
+														<a href="#">${cartitem.product.name}</a>
+													</p>
+													<p class="product-des">${cartitem.product.name}</p>
+												</td>
+												<td class="price" data-title="Price"><span>$${cartitem.product.promotionaprice}
+												</span></td>
+												<td class="qty" data-title="Qty">
+													<!-- Input Order -->
+													<div class="input-group">
+														<div class="button minus" onClick='decreaseCount(event, this)'>
+															<button type="button" class="btn btn-primary btn-number"
+																 data-type="minus" data-field="quant[1]">
+																<i class="ti-minus"></i>
+															</button>
+														</div>
+														<input type="text" name="count" class="input-number"
+															data-min="1" data-max="100" value="${cartitem.count}">
+			
+														<div class="button plus" onClick='increaseCount(event, this)'>
+															<button type="button" class="btn btn-primary btn-number"
+																data-type="plus" data-field="quant[1]">
+																<i class="ti-plus"></i>
+															</button>
+														</div>
+													</div> <!--/ End Input Order -->
+												</td>
+												<td class="total-amount" data-title="Total"><span>${cartitem.product.promotionaprice*cartitem.count}</span></td>
+												<td class="action" data-title="Remove"><a
+													href="/user/cart/delete/${cartitem.id}"><i
+														class="ti-trash remove-icon"></i></a></td>
+												<td class="action" data-title="Update">
+													<button type="submit" style="border: none;background: transparent;">
+														<i class="ti-reload update-icon"></i>
+													</button>
+												</td>
+										</form>		
+									</tr>
 							</c:forEach>
 						</tbody>
 					</table>
@@ -72,16 +80,6 @@
 						<div class="row">
 							<div class="col-lg-8 col-md-5 col-12">
 								<div class="left">
-									<div class="coupon">
-										<form action="#" target="_blank">
-											<input name="Coupon" placeholder="Enter Your Coupon">
-											<button class="btn">Apply</button>
-										</form>
-									</div>
-									<div class="checkbox">
-										<label class="checkbox-inline" for="2"><input
-											name="news" id="2" type="checkbox"> Shipping (+10$)</label>
-									</div>
 								</div>
 							</div>
 							<div class="col-lg-4 col-md-7 col-12">
@@ -186,7 +184,25 @@
 		</div>
 	</div>
 </div>
+<script>
+	function increaseCount(a, b) {
+		var input = b.previousElementSibling;
+		var value = parseInt(input.value, 10);
+		value = isNaN(value) ? 0 : value;
+		value++;
+		input.value = value;
+	}
 
+	function decreaseCount(a, b) {
+		var input = b.nextElementSibling;
+		var value = parseInt(input.value, 10);
+		if (value > 1) {
+			value = isNaN(value) ? 0 : value;
+			value--;
+			input.value = value;
+		}
+	}
+</script>
 
 
 

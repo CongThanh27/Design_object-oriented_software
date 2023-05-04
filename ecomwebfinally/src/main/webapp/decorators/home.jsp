@@ -30,7 +30,22 @@
 <link rel="stylesheet" type="text/css"
 	href="${URL}styles/responsive.css">
 <link rel="stylesheet" type="text/css" href="${URL1}styles.css">
- <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.min.js"></script>
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.min.js"></script>
+
+<link rel="stylesheet" type="text/css" href="/resources/css/styles.css">
+<!-- Link CSS của Bootstrap -->
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+
+<!-- Link thư viện jQuery -->
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<!-- Link script của Bootstrap -->
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
 </head>
 <body>
 

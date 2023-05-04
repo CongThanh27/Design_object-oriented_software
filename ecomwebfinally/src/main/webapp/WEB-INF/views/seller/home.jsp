@@ -26,10 +26,11 @@
 				<%-- <div class="image">
           <img src="${URL}dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
         </div> --%>
-				<div class="info">
-					<a href="/seller" class="d-block">Nhóm 9</a>
-				</div>
-			</div>
+
+        <div class="info">
+          <a href="/seller" class="d-block">Nhóm 7</a>
+        </div>
+      </div>
 
 			<!-- SidebarSearch Form -->
 			<div class="form-inline">

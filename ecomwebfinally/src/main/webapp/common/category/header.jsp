@@ -48,13 +48,38 @@
 													aria-hidden="true"></i>Kênh bán hàng</a></li>
 											<li><a href="/user/cart/Order"><i
 													class="fa fa-shopping-cart" aria-hidden="true"></i>Đơn mua</a></li>
-											<li><a href="/user/logout"><i
-													class="fa fa-user-plus" aria-hidden="true"></i>Đăng xuất</a></li>
+											<li><button type="button" class="btn  fa fa-shopping-cart"
+													data-toggle="modal" data-target="#logoutModal">
+													Đăng xuất</button></li>
 										</ul></li>
 								</c:if>
 
 							</ul>
 						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<!-- Modal -->
+		<div class="modal fade"  id="logoutModal" tabindex="-1" role="dialog"
+			aria-labelledby="logoutModalLabel" aria-hidden="true" >
+			<div class="modal-dialog" role="document">
+				<div class="modal-content" >
+					<div class="modal-header">
+						<h5 class="modal-title" id="logoutModalLabel">Xác nhận đăng
+							xuất</h5>
+						<button type="button" class="close" data-dismiss="modal"
+							aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+					</div>
+					<div class="modal-body">Bạn có chắc chắn muốn đăng xuất
+						không?</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-secondary"
+							data-dismiss="modal">Hủy</button>
+						<a href="/user/logout" class="btn btn-primary">Đăng xuất</a>
 					</div>
 				</div>
 			</div>
@@ -100,7 +125,7 @@
 								</c:if>
 
 							</ul>
-							
+
 							<div class="hamburger_container">
 								<i class="fa fa-bars" aria-hidden="true"></i>
 							</div>

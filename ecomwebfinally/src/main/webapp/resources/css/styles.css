@@ -10,7 +10,9 @@ body {
 	position: relative;
 	margin: 0 auto;
 }
-
+.modal-backdrop.fade.show{
+	display: none;
+}
 #sidebar {
 	position: fixed;
 	top: 159px;

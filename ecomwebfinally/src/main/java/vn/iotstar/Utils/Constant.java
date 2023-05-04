@@ -3,7 +3,7 @@ package vn.iotstar.Utils;
 public class Constant {
 	public static final String SESION_USERNAME ="username";
 	public static final String COOKIE_REMEMBER ="username";
-	public static final String DIR = "F:\\CNTT\\N3\\Ky1\\LapTrinhWeb\\ecomwebfinally\\src\\main\\webapp\\resources\\images";
+	public static final String DIR = "D:\\Download\\Spring\\ECOMWEB_myPham\\ecomwebfinally\\src\\main\\webapp\\resources\\images";
 	public static class Path {
 		public static final String LOGIN ="/views/common/login.jsp";
 		public static final String REGISTER ="/views/common/register.jsp";
