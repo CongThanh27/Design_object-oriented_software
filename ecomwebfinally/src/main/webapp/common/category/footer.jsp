@@ -10,9 +10,9 @@
                     <div class="col-lg-6">
                         <div class="footer_nav_container d-flex flex-sm-row flex-column align-items-center justify-content-lg-start justify-content-center text-center">
                             <ul class="footer_nav">
-                                <li><a href="https://nguyendinhthien20110263.blogspot.com/2022/12/thay-trung-ep-trai.html">Blog</a></li>
-                                <li><a href="https://nguyendinhthien20110263.blogspot.com/2022/12/thay-trung-ep-trai.html">FAQs</a></li>
-                                <li><a href="https://nguyendinhthien20110263.blogspot.com/2022/12/thay-trung-ep-trai.html">Contact us</a></li>
+                                <li><a href="#">Blog</a></li>
+                                <li><a href="#">FAQs</a></li>
+                                <li><a href="#">Contact us</a></li>
                             </ul>
                         </div>
                     </div>
