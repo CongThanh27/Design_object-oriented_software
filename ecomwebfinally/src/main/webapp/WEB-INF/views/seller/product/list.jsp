@@ -26,7 +26,7 @@
         <div class="info">
 
 
-          <a href="/seller" class="d-block">Nhóm 9</a>
+          <a href="/seller" class="d-block">Nhóm 7</a>
 
           
         </div>
