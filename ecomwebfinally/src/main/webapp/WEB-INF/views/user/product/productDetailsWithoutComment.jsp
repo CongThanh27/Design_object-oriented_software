@@ -80,14 +80,6 @@
 					</div> -->
 				<div
 					class="quantity d-flex flex-column flex-sm-row align-items-sm-center">
-					<span>Quantity:</span>
-					<div class="quantity_selector">
-						<span class="minus"><i class="fa fa-minus"
-							aria-hidden="true"></i></span>
-						<!-- <input type="text" name="listImage" value="1"  id="quantity_value" /> -->
-						<span id="quantity_value">1</span> <span class="plus"><i
-							class="fa fa-plus" aria-hidden="true"></i></span>
-					</div>
 					<c:if test="${user == null}">
 						<form id="review_form" action=<c:url value = "/login"/>
 							method="POST" enctype="multipart/form-data">
@@ -97,7 +89,7 @@
 								type="text" name="userid" value="1" /> <input hidden="hidden"
 								type="text" name="productid" value="${product.id}" />
 
-							<button type="submit" class="red_button add_to_cart_button">add
+							<button type="submit" class="red_button add_to_cart_button">Add
 								to cart</button>
 						</form>
 					</c:if>
@@ -109,14 +101,12 @@
 								name="storeid" value="${Storeid}" /> <input hidden="hidden"
 								type="text" name="userid" value="1" /> <input hidden="hidden"
 								type="text" name="productid" value="${product.id}" />
-
-							<button type="submit" class="red_button add_to_cart_button">add
+							<button type="submit" class="red_button add_to_cart_button">Add
 								to cart</button>
 						</form>
 					</c:if>
 					<div
 						class="product_favorite d-flex flex-column align-items-center justify-content-center"></div>
-
 				</div>
 			</div>
 		</div>

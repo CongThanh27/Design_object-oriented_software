@@ -474,5 +474,17 @@ public class ProductController {
 		return new ModelAndView("forward:/product/user/list", model);
 
 	}
+	@PostMapping("search")
+	public String searchProduct(ModelMap model, @RequestParam(name = "name", required = false) String name) {
+		List<Product> list = null;
+		if (StringUtils.hasText(name)) {
+			list = productService.findBynameContaining(name);
+		} else {
+			list = productService.findAll();
+		}
+		model.addAttribute("product", list);
+
+		return "user/product/list";
+	}
 
 }
